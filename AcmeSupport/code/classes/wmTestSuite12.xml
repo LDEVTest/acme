@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webMethodsTestSuite description="Auto Generated from Template" name="wmTestSuite12.xml">
+    <webMethodsTestCase description="Auto Generated from Template" name="TC_Flow_Service_1">
+        <service folder="acmeSupport.codeExample.codeSvc" name="Flow_Service_1">
+            <input>
+                <file filename="C:\ESBTestRoot\Products\webM912\Designer\install\IntegrationServer\instances\default\packages\AcmeSupport\resources\acmeSupport_codeExample_codeSvc_Flow_Service_1_input.xml"/>
+            </input>
+            <expected>
+                <file filename="/resources/acmeSupport_codeExample_codeSvc_Flow_Service_1_output.xml"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+</webMethodsTestSuite>

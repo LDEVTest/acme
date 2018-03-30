@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="pwsd" targetNamespace="http://dcgwmdcc01.rndlab.ad.local/ws:pwsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://dcgwmdcc01.rndlab.ad.local/ws:pwsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://dcgwmdcc01.rndlab.ad.local/ws:pwsd" xmlns:tns="http://dcgwmdcc01.rndlab.ad.local/ws:pwsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="mappingService" type="tns:mappingService"/>
+          <xsd:element name="mappingServiceResponse" type="tns:mappingServiceResponse"/>
+          <xsd:complexType name="mappingService">
+            <xsd:sequence>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="mappingServiceResponse">
+            <xsd:sequence>
+              <xsd:element name="PartsConfirmation" nillable="true" type="tns:PartsConfirmation"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="PartsConfirmation">
+            <xsd:sequence>
+              <xsd:element name="PartConfirmation" nillable="true" type="tns:PartConfirmation"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="PartConfirmation">
+            <xsd:sequence>
+              <xsd:element name="Header" nillable="true" type="tns:Header"/>
+              <xsd:element name="SKUList" nillable="true" type="tns:SKUList"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="Header">
+            <xsd:sequence>
+              <xsd:element name="ConfirmationID" nillable="true" type="xsd:string"/>
+              <xsd:element name="DateTimeStamp" nillable="true" type="xsd:string"/>
+              <xsd:element name="Supplier" nillable="true" type="tns:Supplier"/>
+              <xsd:element name="Requestor" nillable="true" type="tns:Requestor"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="Supplier">
+            <xsd:sequence>
+              <xsd:element name="ID" nillable="true" type="xsd:string"/>
+              <xsd:element name="Name" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="Requestor">
+            <xsd:sequence>
+              <xsd:element name="ID" nillable="true" type="xsd:string"/>
+              <xsd:element name="Name" nillable="true" type="xsd:string"/>
+              <xsd:element name="Billing" nillable="true" type="tns:Billing"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="Billing">
+            <xsd:sequence>
+              <xsd:element name="Account" nillable="true" type="xsd:string"/>
+              <xsd:element name="CreditLine" nillable="true" type="xsd:string"/>
+              <xsd:element name="Terms" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="SKUList">
+            <xsd:sequence>
+              <xsd:element name="SKUCOUNT" nillable="true" type="xsd:string"/>
+              <xsd:element maxOccurs="unbounded" name="SKU" nillable="true" type="tns:SKU"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="SKU">
+            <xsd:sequence>
+              <xsd:element name="SKUID" nillable="true" type="xsd:string"/>
+              <xsd:element name="INTERNALID" nillable="true" type="xsd:string"/>
+              <xsd:element name="QUANTITY" nillable="true" type="xsd:string"/>
+              <xsd:element name="DESC" nillable="true" type="xsd:string"/>
+              <xsd:element name="PRICE" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="pwsd_PortType_mappingService">
+    <wsdl:part name="parameters" element="tns:mappingService">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pwsd_PortType_mappingServiceResponse">
+    <wsdl:part name="parameters" element="tns:mappingServiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="pwsd_PortType">
+    <wsdl:operation name="mappingService">
+      <wsdl:input message="tns:pwsd_PortType_mappingService">
+    </wsdl:input>
+      <wsdl:output message="tns:pwsd_PortType_mappingServiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ws_pwsd_Binder" type="tns:pwsd_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="mappingService">
+      <soap:operation soapAction="ws_pwsd_Binder_mappingService" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ws.pwsd">
+    <wsdl:port name="ws_pwsd_Port" binding="tns:ws_pwsd_Binder">
+      <soap:address location="http://dcgwmdcc01.rndlab.ad.local:5555/ws/ws:pwsd/ws_pwsd_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

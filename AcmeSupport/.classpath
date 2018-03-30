@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="acme/Support/WebServices/|acmeSupport/examples/|acmeSupport/Support/|acme/Support/|acme/" kind="src" path="code/source"/>
+	<classpathentry kind="src" path="config"/>
+	<classpathentry excluding="test/reports/|test/reports/html/|test/reports/html/com/wm/ps/test/|test/" kind="src" path="resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/source/gwm/trunk/modules/testsuite-core/resources/jars/httpunit.jar"/>
+	<classpathentry kind="lib" path="C:/source/gwm/trunk/modules/testsuite-core/resources/jars/junit.jar"/>
+	<classpathentry kind="lib" path="C:/source/gwm/trunk/modules/testsuite-core/resources/jars/xmlunit1.0.jar"/>
+	<classpathentry kind="var" path="IS_CLIENT" sourcepath="/IS_CLIENT_SRC"/>
+	<classpathentry kind="var" path="IS_SERVER"/>
+	<classpathentry kind="output" path="code/classes"/>
+</classpath>
