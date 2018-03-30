@@ -17,18 +17,6 @@
 </MAP>
 </INVOKE>
 
-<INVOKE TIMEOUT="" SERVICE="acmeSupport.codeExample.codeSvc.utils:startTiming" VALIDATE-IN="$none" VALIDATE-OUT="$none" DISABLED="true">
-  <COMMENT>start timing the service using a svc from WmSamples</COMMENT>
-
-  <!-- nodes -->
-
-<MAP MODE="INPUT">
-</MAP>
-
-<MAP MODE="OUTPUT">
-</MAP>
-</INVOKE>
-
 <SEQUENCE TIMEOUT="" EXIT-ON="FAILURE">
   <COMMENT>map header information</COMMENT>
 
@@ -562,6 +550,18 @@
 </INVOKE>
 </SEQUENCE>
 </SEQUENCE>
+
+<INVOKE TIMEOUT="" SERVICE="acmeSupport.codeExample.codeSvc.utils:startTiming" VALIDATE-IN="$none" VALIDATE-OUT="$none" DISABLED="true">
+  <COMMENT>start timing the service using a svc from WmSamples</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
 
 <INVOKE TIMEOUT="" SERVICE="acmeSupport.codeExample.codeSvc.utils:endTiming" VALIDATE-IN="$none" VALIDATE-OUT="$none" DISABLED="true">
   <COMMENT>calculate time of service execution using svc from WmSamples</COMMENT>
