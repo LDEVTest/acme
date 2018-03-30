@@ -5,30 +5,6 @@
 
   <!-- nodes -->
 
-<INVOKE TIMEOUT="" SERVICE="acmeSupport.codeExample.codeSvc.utils:setInputs" VALIDATE-IN="$none" VALIDATE-OUT="$none">
-  <COMMENT>loads input from 61kb xml text (400 item array of parts)</COMMENT>
-
-  <!-- nodes -->
-
-<MAP MODE="INPUT">
-</MAP>
-
-<MAP MODE="OUTPUT">
-</MAP>
-</INVOKE>
-
-<INVOKE TIMEOUT="" SERVICE="acmeSupport.codeExample.codeSvc.utils:startTiming" VALIDATE-IN="$none" VALIDATE-OUT="$none">
-  <COMMENT>start timing the service using a svc from WmSamples</COMMENT>
-
-  <!-- nodes -->
-
-<MAP MODE="INPUT">
-</MAP>
-
-<MAP MODE="OUTPUT">
-</MAP>
-</INVOKE>
-
 <SEQUENCE TIMEOUT="" EXIT-ON="FAILURE">
   <COMMENT>map header information</COMMENT>
 
@@ -616,7 +592,31 @@
 </MAPCOPY>
 </MAP>
 </INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="acmeSupport.codeExample.codeSvc.utils:setInputs" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>loads input from 61kb xml text (400 item array of parts)</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
 </SEQUENCE>
+
+<INVOKE TIMEOUT="" SERVICE="acmeSupport.codeExample.codeSvc.utils:startTiming" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>start timing the service using a svc from WmSamples</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
 
 <INVOKE TIMEOUT="" SERVICE="acmeSupport.codeExample.codeSvc.utils:endTiming" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT>calculate time of service execution using svc from WmSamples</COMMENT>
