@@ -11,12 +11,12 @@
   <!-- nodes -->
 
 <SEQUENCE TIMEOUT="" EXIT-ON="FAILURE">
-  <COMMENT></COMMENT>
+  <COMMENT>try</COMMENT>
 
   <!-- nodes -->
 
 <INVOKE TIMEOUT="" SERVICE="pub.math:subtractInts" VALIDATE-IN="$none" VALIDATE-OUT="$none">
-  <COMMENT>try</COMMENT>
+  <COMMENT></COMMENT>
 
   <!-- nodes -->
 
