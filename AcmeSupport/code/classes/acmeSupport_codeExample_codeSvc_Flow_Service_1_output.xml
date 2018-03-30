@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.util.Values">
+    <value name="num1">1</value>
+    <value name="num2">2</value>
+    <value name="A">1</value>
+    <value name="B">2</value>
+    <value name="value">0</value>
+    <value name="SUM">3</value>
+    <value name="DIFFERENCE">-1</value>
+    <value name="PRODUCT">2</value>
+    <value name="QUOTIENT">0</value>
+  </record>
+</IDataXMLCoder>

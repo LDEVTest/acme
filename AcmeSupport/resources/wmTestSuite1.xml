@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webMethodsTestSuite description="testSuiteDescription" name="testSuiteName">
+    <webMethodsTestCase description="testCaseDescription" name="testCaseName">
+        <service folder="acmeSupport.adapters" name="CreateConnection">
+            <input>
+                <file filename="C:\ESBTestRoot\Products\webM912\Designer\install\IntegrationServer\instances\default\packages\AcmeSupport\resources\pubMathAddints_Input.xml"/>
+            </input>
+            <expected>
+                <file filename="C:\ESBTestRoot\Products\webM912\Designer\install\IntegrationServer\instances\default\packages\AcmeSupport\resources\pubMathAddints_output.xml"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+</webMethodsTestSuite>
